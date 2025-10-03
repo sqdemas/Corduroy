@@ -411,6 +411,8 @@ MonoBehaviour:
   obstacles:
   - {fileID: 5659724208481883043, guid: fd865e25302178846a2ad0f0cba51618, type: 3}
   - {fileID: 2481507315050444544, guid: d5b04acab451f4743a1061d5b6eddee2, type: 3}
+  - {fileID: 4831713356381715876, guid: 94ba7390ca461dd478190323e0120eac, type: 3}
+  - {fileID: 8361284491304268566, guid: add486e0b7056f74a889184359bb90c3, type: 3}
   initPoint: {x: 0, y: 0}
 --- !u!4 &1189584243
 Transform:
