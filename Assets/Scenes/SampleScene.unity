@@ -533,7 +533,7 @@ GameObject:
   - component: {fileID: 883507171}
   - component: {fileID: 883507173}
   m_Layer: 5
-  m_Name: rect
+  m_Name: heart1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -633,7 +633,7 @@ GameObject:
   - component: {fileID: 1189584241}
   - component: {fileID: 1189584240}
   m_Layer: 0
-  m_Name: ObstacleScripts
+  m_Name: ObstacleManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -802,7 +802,7 @@ GameObject:
   - component: {fileID: 1285595783}
   - component: {fileID: 1285595782}
   m_Layer: 5
-  m_Name: rect (1)
+  m_Name: heart2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -902,7 +902,7 @@ GameObject:
   - component: {fileID: 1545623988}
   - component: {fileID: 1545623987}
   m_Layer: 5
-  m_Name: rect (2)
+  m_Name: heart3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1083,7 +1083,7 @@ GameObject:
   - component: {fileID: 1673593617}
   - component: {fileID: 1673593618}
   m_Layer: 5
-  m_Name: ThreeHearts
+  m_Name: HealthManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1212,7 +1212,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 178a3d74f11f2415fbb025f6baccefc4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HealthHeartBar
-  health: 3
   hearts:
   - {fileID: 883507171}
   - {fileID: 1285595783}

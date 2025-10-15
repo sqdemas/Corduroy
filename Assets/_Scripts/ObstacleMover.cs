@@ -14,9 +14,23 @@ public class Obstacle : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // Vector2 pos = new Vector2(
+        //     gameObject.transform.position.x - speed * Time.deltaTime,
+        //     gameObject.transform.position.y);
+        // gameObject.transform.position = pos;   
+    // Create a new vector where we modify the x position
+        // of our game object
         Vector2 pos = new Vector2(
-            gameObject.transform.position.x - speed * Time.deltaTime,
-            gameObject.transform.position.y);
-        gameObject.transform.position = pos;   
+            gameObject.transform.position.x,
+            gameObject.transform.position.y + speed);
+
+        // Assign new position vector to game object
+        gameObject.transform.position = pos;
+
+        if(gameObject.transform.position.y >= 10f)
+        {
+            Destroy(gameObject);
+        }
+    
     }
 }

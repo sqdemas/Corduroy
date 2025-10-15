@@ -1,10 +1,10 @@
 using UnityEngine.UI;
 using UnityEngine;
 
-public class HealthHeartBar : MonoBehaviour
+public class HealthController : MonoBehaviour
 {
 
-    public int health = 3;
+    public static int health = 3;
 
     public Image[] hearts;
 
