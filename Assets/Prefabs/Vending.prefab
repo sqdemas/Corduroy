@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2285572150209366052}
   - component: {fileID: 6589887795524344502}
   - component: {fileID: -3384429616900936673}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Vending
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
@@ -165,7 +165,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!114 &-3384429616900936673
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -178,4 +178,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ccfc1b0625442a479df7fa9f291236e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Obstacle
-  speed: 0.5
+  minSpeed: 0.5
+  maxSpeed: 2

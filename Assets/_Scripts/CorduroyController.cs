@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 
 public class CorduroyController : MonoBehaviour
 {
@@ -57,19 +58,30 @@ public class CorduroyController : MonoBehaviour
             // code to visually show collision by having corduroy bounce back
 
             // code below should check if health <=0 then lose condition
+
             // collision.gameObject.SetActive(false);
-            SpriteRenderer sr = gameObject.GetComponent<SpriteRenderer>();
-            if (sr != null)
-            {
-                Color c = sr.color;
-                c.a = 0.5f;
-                sr.color = c;
+            StartCoroutine(GetHurt());
+            // SpriteRenderer sr = gameObject.GetComponent<SpriteRenderer>();
+            // if (sr != null)
+            // {
+            //     Color c = sr.color;
+            //     c.a = 0.5f;
+            //     sr.color = c;
 
-                InvokeRepeating("ResetColor", 1, 0);
+            //     InvokeRepeating("ResetColor", 1, 0);
 
-            }
+            // }
 
         }
+    }
+    IEnumerator GetHurt()
+    {
+        // prevents player from taking damage from obstacle for 3 seconds after collision
+        Physics2D.IgnoreLayerCollision(7, 8);
+        GetComponent<Animator>().SetLayerWeight(1, 1);
+        yield return new WaitForSeconds(3);
+        GetComponent<Animator>().SetLayerWeight(1, 0);
+        Physics2D.IgnoreLayerCollision(7, 8, false);
     }
 
     private void ResetColor()

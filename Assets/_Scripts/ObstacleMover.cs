@@ -25,10 +25,10 @@ public class Obstacle : MonoBehaviour
         // Assign new position vector to game object
         gameObject.transform.position = pos;
 
-        if(gameObject.transform.position.y <= -10f)
-        {
-            Destroy(gameObject);
-        }
+        // if(gameObject.transform.position.x <= -10f)
+        // {
+        //     Destroy(gameObject);
+        // }
     
     }
 }

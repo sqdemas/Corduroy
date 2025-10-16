@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4548794765726043301}
   - component: {fileID: 6404155774565345172}
   - component: {fileID: -8443790892810959308}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ShoppingBags
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
@@ -119,7 +119,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!61 &6404155774565345172
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -178,4 +178,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ccfc1b0625442a479df7fa9f291236e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Obstacle
-  speed: 0.5
+  minSpeed: 0.5
+  maxSpeed: 2
