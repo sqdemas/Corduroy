@@ -631,7 +631,6 @@ GameObject:
   - component: {fileID: 1189584243}
   - component: {fileID: 1189584242}
   - component: {fileID: 1189584241}
-  - component: {fileID: 1189584240}
   m_Layer: 0
   m_Name: ObstacleManager
   m_TagString: Untagged
@@ -639,19 +638,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1189584240
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1189584239}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f873565535df0d04c89fce3eb7396efb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ObstaclePlacer
-  obstacle: {fileID: 2481507315050444544, guid: d5b04acab451f4743a1061d5b6eddee2, type: 3}
 --- !u!114 &1189584241
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -664,7 +650,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ccfc1b0625442a479df7fa9f291236e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Obstacle
-  speed: 0
+  minSpeed: 0.5
+  maxSpeed: 2
 --- !u!114 &1189584242
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -775,7 +762,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!114 &1233084828
 MonoBehaviour:
   m_ObjectHideFlags: 0

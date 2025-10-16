@@ -18,31 +18,31 @@ public class CorduroyController : MonoBehaviour
         if (Input.GetKey(KeyCode.UpArrow))
         {
             // Corduroy is bounded by y position 0 on top
-            if(gameObject.transform.position.y <= 0)
+            if (gameObject.transform.position.y <= 0)
             {
-            // Create a new vector where we modify the y position
-            // of our game object
-            Vector2 pos = new Vector2(
-                gameObject.transform.position.x,
-                gameObject.transform.position.y + speed);
+                // Create a new vector where we modify the y position
+                // of our game object
+                Vector2 pos = new Vector2(
+                    gameObject.transform.position.x,
+                    gameObject.transform.position.y + speed);
 
-            // Assign new position vector to game object
-            gameObject.transform.position = pos;
+                // Assign new position vector to game object
+                gameObject.transform.position = pos;
             }
         }
         else if (Input.GetKey(KeyCode.DownArrow))
         {
             // Corduroy is bounded by y position -4 on bottom
-            if(gameObject.transform.position.y >= -4)
+            if (gameObject.transform.position.y >= -4)
             {
-            // Create a new vector where we modify the x position
-            // of our game object
-            Vector2 pos = new Vector2(
-                gameObject.transform.position.x,
-                gameObject.transform.position.y - speed);
+                // Create a new vector where we modify the x position
+                // of our game object
+                Vector2 pos = new Vector2(
+                    gameObject.transform.position.x,
+                    gameObject.transform.position.y - speed);
 
-            // Assign new position vector to game object
-            gameObject.transform.position = pos;
+                // Assign new position vector to game object
+                gameObject.transform.position = pos;
             }
 
         }
@@ -57,7 +57,33 @@ public class CorduroyController : MonoBehaviour
             // code to visually show collision by having corduroy bounce back
 
             // code below should check if health <=0 then lose condition
+            // collision.gameObject.SetActive(false);
+            SpriteRenderer sr = gameObject.GetComponent<SpriteRenderer>();
+            if (sr != null)
+            {
+                Color c = sr.color;
+                c.a = 0.5f;
+                sr.color = c;
+
+                InvokeRepeating("ResetColor", 1, 0);
+
+            }
+
         }
+    }
+
+    private void ResetColor()
+    {
+        SpriteRenderer sr = gameObject.GetComponent<SpriteRenderer>();
+            if (sr != null)
+            {
+                Color c = sr.color;
+                c.a = 1f;
+                sr.color = c;
+
+
+
+            }
     }
 
 }

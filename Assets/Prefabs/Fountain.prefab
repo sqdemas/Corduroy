@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 158770284741592068}
   - component: {fileID: 5312281043770792214}
   - component: {fileID: 1363665425727707399}
+  - component: {fileID: -7505081927420670551}
   m_Layer: 0
   m_Name: Fountain
   m_TagString: Obstacle
@@ -165,3 +166,16 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &-7505081927420670551
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4831713356381715876}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ccfc1b0625442a479df7fa9f291236e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Obstacle
+  speed: 0.5

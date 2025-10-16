@@ -17,6 +17,7 @@ public class ObstacleGenerator : MonoBehaviour
     void PlaceObstacle()
     {
         int currentObs = Random.Range(0, obstacles.Count);
+        initPoint = new Vector2(Random.Range(-5f, 5f), Random.Range(-5f, 5f));
         Instantiate(obstacles[currentObs], initPoint, Quaternion.identity);
     }
 }
