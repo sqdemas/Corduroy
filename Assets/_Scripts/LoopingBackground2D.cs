@@ -1,14 +1,15 @@
 using UnityEngine;
-
+using System.Collections;
 public class LoopingBackground2D : MonoBehaviour
 {
 
     public float scrollSpeed = 2f; // Adjust this to control background scroll speed
     public float backgroundWidth; // The width of a single background tile
-    
-    private Transform[] backgrounds; // Array to hold references to your two background tiles
 
-    void Start()
+    private Transform[] backgrounds; // Array to hold references to your two background tiles
+    public static float time;
+
+    IEnumerator Start()
     {
         // Get references to the child background tiles
         backgrounds = new Transform[transform.childCount];
@@ -27,6 +28,9 @@ public class LoopingBackground2D : MonoBehaviour
         {
             Debug.LogError("Background tiles or SpriteRenderer not found!");
         }
+        time = 0f; // prevents background from moving
+        yield return new WaitForSeconds(3f);
+        time = Time.deltaTime; // allows background to start moving
     }
 
     // Update is called once per frame
@@ -35,7 +39,7 @@ public class LoopingBackground2D : MonoBehaviour
         // Move all background tiles to the left
         foreach (Transform bg in backgrounds)
         {
-            bg.Translate(Vector3.left * scrollSpeed * Time.deltaTime);
+            bg.Translate(Vector3.left * scrollSpeed * time);
         }
 
         // Check if the first background tile is off-screen and reposition it

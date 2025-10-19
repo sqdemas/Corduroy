@@ -4,13 +4,12 @@ using System.Collections;
 public class CorduroyController : MonoBehaviour
 {
     public float speed = 0.02f;
-
     private Vector2 initPosition;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         initPosition = gameObject.transform.position;
+        Physics2D.IgnoreLayerCollision(7, 8, false); // resets collisions each time the scene reloads
     }
 
     // Update is called once per frame
@@ -55,50 +54,23 @@ public class CorduroyController : MonoBehaviour
         {
             // On collision with obstacle, subtract 1 health
             HealthController.health--;
-            // code to visually show collision
+            // Code to visually show collision
             StartCoroutine(GetHurt());
-            // code to check if health <=0 then lose condition
+            // Code to check if health <=0 then plays GameOver screen
             if (HealthController.health <= 0)
             {
                 PlayerManager.isGameOver = true;
             }
 
-            // collision.gameObject.SetActive(false);
-            // SpriteRenderer sr = gameObject.GetComponent<SpriteRenderer>();
-            // if (sr != null)
-            // {
-            //     Color c = sr.color;
-            //     c.a = 0.5f;
-            //     sr.color = c;
-
-            //     InvokeRepeating("ResetColor", 1, 0);
-
-            // }
-
         }
     }
     IEnumerator GetHurt()
     {
-        // prevents player from taking damage from obstacle for 3 seconds after collision
-        Physics2D.IgnoreLayerCollision(7, 8);
-        GetComponent<Animator>().SetLayerWeight(1, 1);
+        Physics2D.IgnoreLayerCollision(7, 8); // prevents player from taking damage from obstacle for 3 seconds after collision
+        GetComponent<Animator>().SetLayerWeight(1, 1); // plays hurt animation for 3 seconds
         yield return new WaitForSeconds(3);
         GetComponent<Animator>().SetLayerWeight(1, 0);
-        Physics2D.IgnoreLayerCollision(7, 8, false);
+        Physics2D.IgnoreLayerCollision(7, 8, false); // resets collisions
     }
-
-    // private void ResetColor()
-    // {
-    //     SpriteRenderer sr = gameObject.GetComponent<SpriteRenderer>();
-    //         if (sr != null)
-    //         {
-    //             Color c = sr.color;
-    //             c.a = 1f;
-    //             sr.color = c;
-
-
-
-    //         }
-    // }
 
 }

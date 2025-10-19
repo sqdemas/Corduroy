@@ -12,24 +12,19 @@ public class PlayerManager : MonoBehaviour
         gameOverScreen.SetActive(false);
         Time.timeScale = 1.0f;
     }
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
     void Update()
     {
         if (isGameOver)
         {
             gameOverScreen.SetActive(true);
-            Time.timeScale = 0;
+            Time.timeScale = 0; // freezes game
+            LoopingBackground2D.time = 0; // freezes background scroll
         }
     }
     
     public void ReplayLevel()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex); // reloads current scene
     }
 }

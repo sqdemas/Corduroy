@@ -5,18 +5,15 @@ public class HealthController : MonoBehaviour
 {
 
     public static int health = 3;
-
     public Image[] hearts;
-
     public Sprite fullHeart;
-
     public Sprite emptyHeart;
 
     void Awake()
     {
         health = 3;
     }
-    // Update is called once per frame
+
     void Update()
     {
         foreach (Image img in hearts) {
