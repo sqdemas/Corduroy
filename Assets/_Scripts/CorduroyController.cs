@@ -55,12 +55,15 @@ public class CorduroyController : MonoBehaviour
         {
             // On collision with obstacle, subtract 1 health
             HealthController.health--;
-            // code to visually show collision by having corduroy bounce back
-
-            // code below should check if health <=0 then lose condition
+            // code to visually show collision
+            StartCoroutine(GetHurt());
+            // code to check if health <=0 then lose condition
+            if (HealthController.health <= 0)
+            {
+                PlayerManager.isGameOver = true;
+            }
 
             // collision.gameObject.SetActive(false);
-            StartCoroutine(GetHurt());
             // SpriteRenderer sr = gameObject.GetComponent<SpriteRenderer>();
             // if (sr != null)
             // {
@@ -84,18 +87,18 @@ public class CorduroyController : MonoBehaviour
         Physics2D.IgnoreLayerCollision(7, 8, false);
     }
 
-    private void ResetColor()
-    {
-        SpriteRenderer sr = gameObject.GetComponent<SpriteRenderer>();
-            if (sr != null)
-            {
-                Color c = sr.color;
-                c.a = 1f;
-                sr.color = c;
+    // private void ResetColor()
+    // {
+    //     SpriteRenderer sr = gameObject.GetComponent<SpriteRenderer>();
+    //         if (sr != null)
+    //         {
+    //             Color c = sr.color;
+    //             c.a = 1f;
+    //             sr.color = c;
 
 
 
-            }
-    }
+    //         }
+    // }
 
 }
