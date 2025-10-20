@@ -5,46 +5,52 @@ public class CorduroyController : MonoBehaviour
 {
     public float speed = 0.02f;
     private Vector2 initPosition;
+    public static bool canMove; // whether player can move Corduroy or not
 
     void Start()
     {
         initPosition = gameObject.transform.position;
         Physics2D.IgnoreLayerCollision(7, 8, false); // resets collisions each time the scene reloads
+        canMove = false;
+        StartCoroutine(BeginningFreeze());
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.UpArrow))
+        if(canMove)
         {
-            // Corduroy is bounded by y position 0 on top
-            if (gameObject.transform.position.y <= 0)
+            if (Input.GetKey(KeyCode.UpArrow))
             {
-                // Create a new vector where we modify the y position
-                // of our game object
-                Vector2 pos = new Vector2(
-                    gameObject.transform.position.x,
-                    gameObject.transform.position.y + speed);
+                // Corduroy is bounded by y position 0 on top
+                if (gameObject.transform.position.y <= 0)
+                {
+                    // Create a new vector where we modify the y position
+                    // of our game object
+                    Vector2 pos = new Vector2(
+                        gameObject.transform.position.x,
+                        gameObject.transform.position.y + speed);
 
-                // Assign new position vector to game object
-                gameObject.transform.position = pos;
+                    // Assign new position vector to game object
+                    gameObject.transform.position = pos;
+                }
             }
-        }
-        else if (Input.GetKey(KeyCode.DownArrow))
-        {
-            // Corduroy is bounded by y position -4 on bottom
-            if (gameObject.transform.position.y >= -4)
+            else if (Input.GetKey(KeyCode.DownArrow))
             {
-                // Create a new vector where we modify the x position
-                // of our game object
-                Vector2 pos = new Vector2(
-                    gameObject.transform.position.x,
+                // Corduroy is bounded by y position -4 on bottom
+                if (gameObject.transform.position.y >= -4)
+                {
+                    // Create a new vector where we modify the x position
+                    // of our game object
+                    Vector2 pos = new Vector2(
+                      gameObject.transform.position.x,
                     gameObject.transform.position.y - speed);
 
-                // Assign new position vector to game object
-                gameObject.transform.position = pos;
-            }
+                    // Assign new position vector to game object
+                    gameObject.transform.position = pos;
+                }
 
+            }
         }
     }
 
@@ -54,6 +60,8 @@ public class CorduroyController : MonoBehaviour
         {
             // On collision with obstacle, subtract 1 health
             HealthController.health--;
+            // Play sound effect
+            AudioManager.instance.Play("TakeDamage");
             // Code to visually show collision
             StartCoroutine(GetHurt());
             // Code to check if health <=0 then plays GameOver screen
@@ -62,7 +70,14 @@ public class CorduroyController : MonoBehaviour
                 PlayerManager.isGameOver = true;
             }
 
+
         }
+    }
+
+    IEnumerator BeginningFreeze()
+    {
+        yield return new WaitForSeconds(3f);
+        canMove = true;
     }
     IEnumerator GetHurt()
     {
