@@ -9,6 +9,7 @@ public class CorduroyController : MonoBehaviour
 
     void Start()
     {
+        AudioManager.instance.Play("BackgroundMusic");
         initPosition = gameObject.transform.position;
         Physics2D.IgnoreLayerCollision(7, 8, false); // resets collisions each time the scene reloads
         canMove = false;

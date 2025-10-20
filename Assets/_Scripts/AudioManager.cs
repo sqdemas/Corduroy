@@ -7,7 +7,7 @@ public class AudioManager : MonoBehaviour
     public static AudioManager instance;
     public Sound[] sounds;
     void Awake()
-    {
+	{
         if (instance != null)
 		{
 			Destroy(gameObject);

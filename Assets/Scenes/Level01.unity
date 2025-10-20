@@ -1375,7 +1375,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LevelCountdown
   countdownText: {fileID: 1098708564}
-  remainingTime: 10
+  remainingTime: 120
 --- !u!114 &1098708564
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1518,6 +1518,13 @@ MonoBehaviour:
     volume: 1
     pitch: 1
     loop: 0
+    source: {fileID: 0}
+  - name: BackgroundMusic
+    clip: {fileID: 8300000, guid: 1ad4eeda0e6c54d94ac3cf46c78e3c3f, type: 3}
+    mixer: {fileID: 0}
+    volume: 1
+    pitch: 1
+    loop: 1
     source: {fileID: 0}
 --- !u!4 &1120705971
 Transform:
