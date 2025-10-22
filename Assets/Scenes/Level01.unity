@@ -1044,7 +1044,7 @@ Transform:
   m_GameObject: {fileID: 667666363}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.63, y: 0.01999998, z: 0}
+  m_LocalPosition: {x: -2.57, y: 0.01999998, z: 0}
   m_LocalScale: {x: 1.75, y: 1.6, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1134,7 +1134,7 @@ Transform:
   m_GameObject: {fileID: 829855387}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 16.03, y: 0.01999998, z: 0}
+  m_LocalPosition: {x: 15.27, y: 0.01999998, z: 0}
   m_LocalScale: {x: 1.75, y: 1.6, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1735,13 +1735,6 @@ MonoBehaviour:
     volume: 1
     pitch: 1
     loop: 0
-    source: {fileID: 0}
-  - name: BackgroundMusic
-    clip: {fileID: 8300000, guid: 1ad4eeda0e6c54d94ac3cf46c78e3c3f, type: 3}
-    mixer: {fileID: 0}
-    volume: 1
-    pitch: 1
-    loop: 1
     source: {fileID: 0}
 --- !u!4 &1120705971
 Transform:

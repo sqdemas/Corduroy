@@ -1,8 +1,9 @@
 using UnityEngine;
 
-public class MusicPlayer : MonoBehaviour
+public class MusicPlaying : MonoBehaviour
 {
-    private static MusicPlayer instance;
+    private static MusicPlaying instance;
+    private AudioSource audioSource;
 
     void Awake()
     {
@@ -10,6 +11,7 @@ public class MusicPlayer : MonoBehaviour
         {
             instance = this;
             DontDestroyOnLoad(gameObject);
+            audioSource = GetComponent<AudioSource>();
         }
         else
         {
