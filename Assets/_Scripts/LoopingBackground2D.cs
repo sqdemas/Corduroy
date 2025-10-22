@@ -3,13 +3,13 @@ using System.Collections;
 public class LoopingBackground2D : MonoBehaviour
 {
 
-    public float scrollSpeed = 2f; // Adjust this to control background scroll speed
+    public static float scrollSpeed = 2f; // Adjust this to control background scroll speed
     public float backgroundWidth; // The width of a single background tile
 
     private Transform[] backgrounds; // Array to hold references to your two background tiles
     public static float time;
 
-    IEnumerator Start()
+    void Start()
     {
         // Get references to the child background tiles
         backgrounds = new Transform[transform.childCount];
@@ -28,9 +28,6 @@ public class LoopingBackground2D : MonoBehaviour
         {
             Debug.LogError("Background tiles or SpriteRenderer not found!");
         }
-        time = 0f; // prevents background from moving
-        yield return new WaitForSeconds(3f);
-        time = Time.deltaTime; // allows background to start moving
     }
 
     // Update is called once per frame

@@ -1,8 +1,8 @@
 using UnityEngine;
 
-public class Obstacle : MonoBehaviour
+public class ObstacleMover : MonoBehaviour
 {
-    public float obsSpeed = 5f;
+    public static float obsSpeed = 5f;
 
     void Update()
     {

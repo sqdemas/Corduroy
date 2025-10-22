@@ -9,7 +9,7 @@ public class LevelCountdown : MonoBehaviour
 
     void Update()
     {
-        if (CorduroyController.canMove) // countdown will begin after intial 3, 2, 1 countdown
+        if (GameManager.isScreenFrozen == false) // countdown will begin after intial 3, 2, 1 countdown
         {
             if (remainingTime > 0)
             {
@@ -18,9 +18,8 @@ public class LevelCountdown : MonoBehaviour
             else if (remainingTime <= 0)
             {
                 remainingTime = 0; // prevents negative values
-                PlayerManager.isLevel01Complete = true;
+                GameManager.isLevel01Complete = true;
                 AudioManager.instance.Play("LevelComplete"); // plays positive sound effect
-                CorduroyController.canMove = false; // players cannot move corduroy when level finishes, prevents sound effect from looping
             }
             int minutes = Mathf.FloorToInt(remainingTime / 60);
             int seconds = Mathf.FloorToInt(remainingTime % 60);

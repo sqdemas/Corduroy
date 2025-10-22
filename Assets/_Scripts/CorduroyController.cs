@@ -5,21 +5,17 @@ public class CorduroyController : MonoBehaviour
 {
     public float speed = 0.02f;
     private Vector2 initPosition;
-    public static bool canMove; // whether player can move Corduroy or not
 
     void Start()
     {
-        AudioManager.instance.Play("BackgroundMusic");
         initPosition = gameObject.transform.position;
         Physics2D.IgnoreLayerCollision(7, 8, false); // resets collisions each time the scene reloads
-        canMove = false;
-        StartCoroutine(BeginningFreeze());
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(canMove)
+        if(GameManager.isScreenFrozen == false)
         {
             if (Input.GetKey(KeyCode.UpArrow))
             {
@@ -68,18 +64,13 @@ public class CorduroyController : MonoBehaviour
             // Code to check if health <=0 then plays GameOver screen
             if (HealthController.health <= 0)
             {
-                PlayerManager.isGameOver = true;
+                GameManager.isGameOver = true;
             }
 
 
         }
     }
 
-    IEnumerator BeginningFreeze()
-    {
-        yield return new WaitForSeconds(3f);
-        canMove = true;
-    }
     IEnumerator GetHurt()
     {
         Physics2D.IgnoreLayerCollision(7, 8); // prevents player from taking damage from obstacle for 3 seconds after collision
