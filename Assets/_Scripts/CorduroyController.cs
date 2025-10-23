@@ -18,7 +18,7 @@ public class CorduroyController : MonoBehaviour
         {
             if (Input.GetKey(KeyCode.UpArrow))
             {
-                if (gameObject.transform.position.y <= 0)
+                if (gameObject.transform.position.y <= 0.5)
                 {
                     Vector2 pos = new Vector2(
                         gameObject.transform.position.x,

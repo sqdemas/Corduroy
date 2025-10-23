@@ -11,7 +11,6 @@ public class ObstacleMover : MonoBehaviour
         Vector2 pos = new Vector2(
              gameObject.transform.position.x - obsSpeed * Time.deltaTime,
              gameObject.transform.position.y);
-         gameObject.transform.position = pos;   
 
         // Assign new position vector to game object
         gameObject.transform.position = pos;

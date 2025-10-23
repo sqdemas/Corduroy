@@ -17,7 +17,7 @@ public class SpeedController : MonoBehaviour
         ObstacleMover.obsSpeed = 6f;
         LoopingBackground2D.scrollSpeed += 0.5f;
         // Debug.Log("current obs speed: " + ObstacleMover.obsSpeed);
-        yield return new WaitForSeconds(60f);
+        yield return new WaitForSeconds(30f);
 
         ObstacleMover.obsSpeed = 6.5f;
         LoopingBackground2D.scrollSpeed += 0.5f;

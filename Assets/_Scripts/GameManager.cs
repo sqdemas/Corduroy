@@ -13,7 +13,7 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
-        AudioManager.instance.Play("BackgroundMusic");
+        // AudioManager.instance.Play("BackgroundMusic");
 
         isGameOver = false;
         gameOverScreen.SetActive(false);

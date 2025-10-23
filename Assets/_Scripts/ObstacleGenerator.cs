@@ -6,10 +6,10 @@ public class ObstacleGenerator : MonoBehaviour
 {
 
     public List<GameObject> obstacles = new List<GameObject>();
-    public Vector2 initPoint;
+    private Vector2 initPoint;
     public int obstacleNum = 7; // number of obstacle assets, must update if any assets are added
     private static int currentObs = 0; // index of current obstacle in array
-    private static float[] yRange = { -3f, 0.5f, -2.3f, -4f, -1f, -3.5f, 0.5f, -4f, -0.5f }; // preset y values for obstacles to spawn at 
+    private static float[] yRange = { -3f, 0.5f, -2.5f, -4f, -1f, -3.5f, 0.5f, -4f, -0.5f }; // preset y values for obstacles to spawn at 
     // high 0.5f
     // mid -0.5f
     // mid -1f
@@ -43,7 +43,7 @@ public class ObstacleGenerator : MonoBehaviour
         CancelInvoke("PlaceObstacle");
         InvokeRepeating("PlaceObstacle", 1, waitTime);
         // Debug.Log("current wait time: " + waitTime);
-        yield return new WaitForSeconds(60f);
+        yield return new WaitForSeconds(30f);
 
         waitTime = 1f;
         CancelInvoke("PlaceObstacle");
