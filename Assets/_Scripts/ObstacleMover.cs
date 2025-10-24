@@ -1,8 +1,8 @@
 using UnityEngine;
 
-public class Obstacle : MonoBehaviour
+public class ObstacleMover : MonoBehaviour
 {
-    public float obsSpeed = 5f;
+    public static float obsSpeed = 5f;
 
     void Update()
     {
@@ -11,7 +11,6 @@ public class Obstacle : MonoBehaviour
         Vector2 pos = new Vector2(
              gameObject.transform.position.x - obsSpeed * Time.deltaTime,
              gameObject.transform.position.y);
-         gameObject.transform.position = pos;   
 
         // Assign new position vector to game object
         gameObject.transform.position = pos;

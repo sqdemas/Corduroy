@@ -19,7 +19,8 @@ public class HealthController : MonoBehaviour
         foreach (Image img in hearts) {
             img.sprite = emptyHeart;
         }
-        for (int i = 0; i < health; i++) {
+        for (int i = 0; i < health; i++)
+        {
             hearts[i].sprite = fullHeart;
         }
     }

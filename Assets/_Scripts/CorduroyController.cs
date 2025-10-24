@@ -5,23 +5,20 @@ public class CorduroyController : MonoBehaviour
 {
     public float speed = 0.02f;
     private Vector2 initPosition;
-    public static bool canMove; // whether player can move Corduroy or not
 
     void Start()
     {
         initPosition = gameObject.transform.position;
         Physics2D.IgnoreLayerCollision(7, 8, false); // resets collisions each time the scene reloads
-        canMove = false;
-        StartCoroutine(BeginningFreeze());
     }
 
     void Update()
     {
-        if (canMove)
+        if(GameManager.isScreenFrozen == false)
         {
             if (Input.GetKey(KeyCode.UpArrow))
             {
-                if (gameObject.transform.position.y <= 0)
+                if (gameObject.transform.position.y <= 0.5)
                 {
                     Vector2 pos = new Vector2(
                         gameObject.transform.position.x,
@@ -51,17 +48,10 @@ public class CorduroyController : MonoBehaviour
             StartCoroutine(GetHurt());
             if (HealthController.health <= 0)
             {
-                PlayerManager.isGameOver = true;
+                GameManager.isGameOver = true;
             }
         }
     }
-
-    IEnumerator BeginningFreeze()
-    {
-        yield return new WaitForSeconds(3f);
-        canMove = true;
-    }
-
     IEnumerator GetHurt()
     {
         Physics2D.IgnoreLayerCollision(7, 8);
