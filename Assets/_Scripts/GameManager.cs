@@ -26,6 +26,7 @@ public class GameManager : MonoBehaviour
 
         Time.timeScale = 1.0f;
         StartCoroutine(BeginningFreeze());
+        
     }
 
     void Update()
@@ -49,19 +50,22 @@ public class GameManager : MonoBehaviour
     public static void FreezeScreen()
     {
         // freezes background, corduroy, and level countdown
-        isScreenFrozen = true; 
-        LoopingBackground2D.time = 0f; 
+        isScreenFrozen = true;
+        LoopingBackground2D.timeScale = 0f;
     }
     public static void UnfreezeScreen()
     {
         isScreenFrozen = false;
-        LoopingBackground2D.time = Time.deltaTime;
+        LoopingBackground2D.timeScale = 1f;
     }
     IEnumerator BeginningFreeze()
     {
         FreezeScreen();
         yield return new WaitForSeconds(3f);
         UnfreezeScreen();
+        // begin walking animation after three seconds
+        GameObject player = GameObject.Find("CorduroyAnimation");
+        player.GetComponent<CorduroyController>().StartWalking();
     }
     public void ReplayLevel()
     {

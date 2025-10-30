@@ -7,7 +7,7 @@ public class ObstacleGenerator : MonoBehaviour
 
     public List<GameObject> obstacles = new List<GameObject>();
     private Vector2 initPoint;
-    public int obstacleNum = 7; // number of obstacle assets, must update if any assets are added
+    private int obstacleNum = 11; // number of obstacle assets, must update if any assets are added
     private static int currentObs = 0; // index of current obstacle in array
     private static float[] yRange = { -3f, 0.5f, -2.5f, -4f, -1f, -3.5f, 0.5f, -4f, -0.5f }; // preset y values for obstacles to spawn at 
     // high 0.5f
@@ -30,7 +30,7 @@ public class ObstacleGenerator : MonoBehaviour
 
     void PlaceObstacle()
     {
-        initPoint = new Vector2(Random.Range(8f, 10f), yRange[yIndex % 9]); // random initial position to place obstacle
+        initPoint = new Vector2(Random.Range(8f, 10f), yRange[yIndex % 9]); // random initial position to place obstacle, random x and one of 9 possible y values
         Instantiate(obstacles[currentObs], initPoint, Quaternion.identity); // creates obstacles in array order
         currentObs = (currentObs + 1) % obstacleNum; // updates index of current obstacle
         yIndex++;

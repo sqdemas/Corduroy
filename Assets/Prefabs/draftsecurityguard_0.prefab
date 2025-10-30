@@ -191,3 +191,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f604477870b84f846bb5e14a011fc49b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SecurityGuardController
+  guardSpeed: 1

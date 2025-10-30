@@ -5,11 +5,13 @@ public class CorduroyController : MonoBehaviour
 {
     public float speed = 0.02f;
     private Vector2 initPosition;
+    private Animator walking;
 
     void Start()
     {
         initPosition = gameObject.transform.position;
         Physics2D.IgnoreLayerCollision(7, 8, false); // resets collisions each time the scene reloads
+        walking = GetComponent<Animator>();
     }
 
     void Update()
@@ -59,5 +61,11 @@ public class CorduroyController : MonoBehaviour
         yield return new WaitForSeconds(3);
         GetComponent<Animator>().SetLayerWeight(1, 0);
         Physics2D.IgnoreLayerCollision(7, 8, false);
+    }
+
+    public void StartWalking()
+    {
+        // begins walking animation 
+        walking.SetLayerWeight(2, 1);
     }
 }
