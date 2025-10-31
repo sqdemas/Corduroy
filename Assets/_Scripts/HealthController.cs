@@ -16,8 +16,13 @@ public class HealthController : MonoBehaviour
 
     void Update()
     {
-        foreach (Image img in hearts) {
+        foreach (Image img in hearts)
+        {
             img.sprite = emptyHeart;
+        }
+        if (health > 3)
+        {
+            health = 3;
         }
         for (int i = 0; i < health; i++)
         {

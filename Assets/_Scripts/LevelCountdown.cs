@@ -19,7 +19,7 @@ public class LevelCountdown : MonoBehaviour
             {
                 remainingTime = 0; // prevents negative values
                 GameManager.isLevel01Complete = true;
-                AudioManager.instance.Play("LevelComplete"); // plays positive sound effect
+                AudioManager.instance.Play("PositiveSound"); // plays positive sound effect
             }
             int minutes = Mathf.FloorToInt(remainingTime / 60);
             int seconds = Mathf.FloorToInt(remainingTime % 60);

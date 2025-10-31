@@ -6,6 +6,7 @@ public class CorduroyController : MonoBehaviour
     public float speed = 0.02f;
     private Vector2 initPosition;
     private Animator walking;
+    public ScoreController scoreController;
 
     void Start()
     {
@@ -47,11 +48,19 @@ public class CorduroyController : MonoBehaviour
         {
             HealthController.health--;
             AudioManager.instance.Play("TakeDamage");
+            scoreController.DecreaseScore();
             StartCoroutine(GetHurt());
             if (HealthController.health <= 0)
             {
                 GameManager.isGameOver = true;
             }
+        }
+        if (collision.gameObject.tag == "HealthPower")
+        {
+            HealthController.health++;
+            AudioManager.instance.Play("PositiveSound");
+            scoreController.Powerup();
+            Destroy(collision.gameObject);
         }
     }
     IEnumerator GetHurt()

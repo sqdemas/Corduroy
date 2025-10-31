@@ -7,18 +7,19 @@ public class GameManager : MonoBehaviour
     public static bool isGameOver;
     public static bool isLevel01Complete;
     public static bool isScreenFrozen;
+    public GameObject mainPanel;
     public GameObject gameOverScreen;
     public GameObject level01CompleteScreen;
-    public GameObject midGameMenu;
+    public GameObject pauseMenu;
 
     private void Awake()
     {
-        // AudioManager.instance.Play("BackgroundMusic");
+        mainPanel.SetActive(true);
 
         isGameOver = false;
         gameOverScreen.SetActive(false);
 
-        midGameMenu.SetActive(false);
+        pauseMenu.SetActive(false);
         isLevel01Complete = false;
 
         level01CompleteScreen.SetActive(false);
@@ -42,6 +43,7 @@ public class GameManager : MonoBehaviour
         if (isLevel01Complete)
         {
             level01CompleteScreen.SetActive(true);
+            mainPanel.SetActive(false);
             FreezeScreen();
             Time.timeScale = 0; // freeze objects from spawning game
         }
@@ -72,9 +74,9 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex); // reloads current scene
     }
 
-    public void MenuButton()
+    public void PauseButton()
     {
-        midGameMenu.SetActive(true);
+        pauseMenu.SetActive(true);
         Time.timeScale = 0; // freeze objects from spawning game
         FreezeScreen(); // freezes background, corduroy, and level countdown
     }
@@ -85,7 +87,7 @@ public class GameManager : MonoBehaviour
     
     public void PlayButton()
     {
-        midGameMenu.SetActive(false);
+        pauseMenu.SetActive(false);
         Time.timeScale = 1.0f; // unfreeze game
         UnfreezeScreen();
     }
