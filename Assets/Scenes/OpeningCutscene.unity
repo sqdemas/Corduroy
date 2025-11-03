@@ -234,25 +234,25 @@ MonoBehaviour:
   - image: {fileID: -855298285791758126, guid: 762e8ab3e5a22423cb82c254ed5ff7fe, type: 3}
     dialogue: Lisa and her mother have finished their shopping at the mall today.
   - image: {fileID: 6937817954938267909, guid: 117949623661444de90adab00f6b9572, type: 3}
-    dialogue: 'However, a particular toy has caught Lisa''s eyes: a small bear wearing
-      green corduroy overalls!
+    dialogue: 'However, a particular toy catches Lisa''s attention: a small bear
+      wearing green overalls!
 
 '
   - image: {fileID: -6470460504253458178, guid: de4f8285af31c41f0b17f715abfccb83, type: 3}
     dialogue: '"Mommy, look at that bear!" Lisa exclaims, tugging her mother back
       to the toy display.'
   - image: {fileID: -4178046375966092550, guid: f5ff8de01ec3b4846a5564519d500ede, type: 3}
-    dialogue: '"He''s perfect - the bear I''ve always wanted!" she gushes. Corduroy
-      fondly watches as Lisa points at him. '
+    dialogue: '"He''s the bear I always wanted!" she gushes. Corduroy fondly watches
+      as Lisa points at him. '
   - image: {fileID: 4130640169021434097, guid: fa854109d240b4e798110fd010239063, type: 3}
-    dialogue: '"Not today, dear," Lisa''s mother replied. "I''ve already spent too
+    dialogue: '"Not today, dear," Lisa''s mother replies. "I''ve already spent too
       much."'
   - image: {fileID: 3465286685962602723, guid: a5a5280ce55c545ae96e64eac67e1375, type: 3}
     dialogue: '"Besides," she continues, "he''s missing a button on one of his shoulder
       straps." '
   - image: {fileID: 7028616704906629411, guid: c3b3adad7029740418e55b2946a29b05, type: 3}
-    dialogue: '"Come on, dear, let''s head home," Lisa''s mother says while walking
-      hand and hand, away from Corduroy.'
+    dialogue: '"Come on, dear, let''s head home," says Lisa''s mother walking away
+      from Corduroy.'
   - image: {fileID: 4113829005332862926, guid: e52cb4cadf4674bb5aac7877930e1843, type: 3}
     dialogue: '"I didn''t even notice I was missing a button," Corduroy says to himself.'
   - image: {fileID: 4113829005332862926, guid: e52cb4cadf4674bb5aac7877930e1843, type: 3}
@@ -732,7 +732,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -1645567147964079503, guid: 1c1f8ccd0e0ec46d78b140e1128028d6, type: 3}
+  m_Sprite: {fileID: 6387417227624149323, guid: 3a3eb0be357682242922f916f1a636f1, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
