@@ -4,6 +4,7 @@ using System;
 
 public class AudioManager : MonoBehaviour
 {
+    // controls sound effects
     public static AudioManager instance;
     public Sound[] sounds;
 

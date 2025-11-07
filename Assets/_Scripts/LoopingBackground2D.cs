@@ -3,10 +3,10 @@ using System.Collections;
 public class LoopingBackground2D : MonoBehaviour
 {
 
-    public static float scrollSpeed = 1.5f; // Adjust this to control background scroll speed
-    public float backgroundWidth; // The width of a single background tile
+    public static float scrollSpeed = 1.5f; // background scroll speed
+    public float backgroundWidth; // width of background
 
-    private Transform[] backgrounds; // Array to hold references to your two background tiles
+    private Transform[] backgrounds; // array for references to backgrounds
     public static float timeScale;
 
     void Start()
@@ -30,13 +30,12 @@ public class LoopingBackground2D : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
     void Update()
     {
         // Move all background tiles to the left
         foreach (Transform bg in backgrounds)
         {
-            bg.Translate(Vector3.left * scrollSpeed * timeScale * Time.deltaTime);
+            bg.Translate(Vector3.left * scrollSpeed * timeScale * Time.deltaTime); // time scale allows backrgound loop to freeze
         }
 
         // Check if the first background tile is off-screen and reposition it

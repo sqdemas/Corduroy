@@ -3,6 +3,7 @@ using TMPro;
 
 public class FinalScore : MonoBehaviour
 {
+    // displays score on LevelCompleteScreen
     public TMP_Text scoreText;
     public TMP_Text finalText;
 

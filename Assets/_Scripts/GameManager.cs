@@ -4,6 +4,7 @@ using System.Collections;
 
 public class GameManager : MonoBehaviour
 {
+    // controls main game state, panels, buttons
     public static bool isGameOver;
     public static bool isLevel01Complete;
     public static bool isScreenFrozen;
@@ -14,6 +15,7 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
+        // default configuration
         mainPanel.SetActive(true);
 
         isGameOver = false;
@@ -43,7 +45,7 @@ public class GameManager : MonoBehaviour
         if (isLevel01Complete)
         {
             level01CompleteScreen.SetActive(true);
-            mainPanel.SetActive(false);
+            mainPanel.SetActive(false); // hides main interface
             FreezeScreen();
             Time.timeScale = 0; // freeze objects from spawning game
         }
@@ -62,6 +64,7 @@ public class GameManager : MonoBehaviour
     }
     IEnumerator BeginningFreeze()
     {
+        // freezes screen for beginning 321 countdown
         FreezeScreen();
         yield return new WaitForSeconds(3f);
         UnfreezeScreen();
@@ -80,9 +83,9 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 0; // freeze objects from spawning game
         FreezeScreen(); // freezes background, corduroy, and level countdown
     }
-    public void GoToEscalator()
+    public void LevelCompleteButton()
     {
-        SceneManager.LoadSceneAsync("Escalator");
+        SceneManager.LoadSceneAsync("Level02");
     }
     
     public void PlayButton()

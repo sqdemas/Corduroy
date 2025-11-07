@@ -8,8 +8,7 @@ public class SecurityGuardController : MonoBehaviour
     {
         if (GameObject.FindGameObjectWithTag("Player").transform.position.y >= gameObject.transform.position.y)
         {
-                // Create a new vector where we modify the x position
-                // of our game object
+                // move guard up if player is higher
                 Vector2 pos = new Vector2(
                     gameObject.transform.position.x,
                     gameObject.transform.position.y + guardSpeed * Time.deltaTime);
@@ -19,8 +18,7 @@ public class SecurityGuardController : MonoBehaviour
         if (GameObject.FindGameObjectWithTag("Player").transform.position.y < gameObject.transform.position.y)
         {
 
-                // Create a new vector where we modify the x position
-                // of our game object
+                // move guard down if Corduroy is lower
                 Vector2 pos = new Vector2(
                     gameObject.transform.position.x,
                     gameObject.transform.position.y - guardSpeed * Time.deltaTime);
