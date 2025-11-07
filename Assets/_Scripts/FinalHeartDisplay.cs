@@ -3,6 +3,7 @@ using UnityEngine.UI;
 
 public class FinalHeartDisplay : MonoBehaviour
 {
+    // displays hearts on LevelComplete panel
     public Image[] hearts;
     public Sprite fullHeart;
     public Sprite emptyHeart;

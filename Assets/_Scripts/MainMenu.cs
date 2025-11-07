@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
-    
+    // buttons for opening menu   
     public void PlayGame()
     {
         SceneManager.LoadSceneAsync("OpeningCutscene");

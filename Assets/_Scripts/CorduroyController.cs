@@ -3,7 +3,7 @@ using System.Collections;
 
 public class CorduroyController : MonoBehaviour
 {
-    public float speed = 0.02f;
+    public float speed = 0.03f;
     private Vector2 initPosition;
     private Animator walking;
     public ScoreController scoreController;
@@ -17,11 +17,11 @@ public class CorduroyController : MonoBehaviour
 
     void Update()
     {
-        if(GameManager.isScreenFrozen == false)
+        if(GameManager.isScreenFrozen == false) // keyboard controls disabled while screen is frozen (beginning and paused screen)
         {
             if (Input.GetKey(KeyCode.UpArrow))
             {
-                if (gameObject.transform.position.y <= 0.5)
+                if (gameObject.transform.position.y <= 0.5) // y upper bound for corduroy is 0.5
                 {
                     Vector2 pos = new Vector2(
                         gameObject.transform.position.x,
@@ -31,7 +31,7 @@ public class CorduroyController : MonoBehaviour
             }
             else if (Input.GetKey(KeyCode.DownArrow))
             {
-                if (gameObject.transform.position.y >= -4)
+                if (gameObject.transform.position.y >= -4) // y lower bound is -4
                 {
                     Vector2 pos = new Vector2(
                         gameObject.transform.position.x,
@@ -46,6 +46,7 @@ public class CorduroyController : MonoBehaviour
     {
         if (collision.gameObject.tag == "Obstacle")
         {
+            // decrease hearts, score, play sound effect, and GetHurt animation
             HealthController.health--;
             AudioManager.instance.Play("TakeDamage");
             scoreController.DecreaseScore();
@@ -65,6 +66,8 @@ public class CorduroyController : MonoBehaviour
     }
     IEnumerator GetHurt()
     {
+        // 3 second flashing animation
+        // corduroy is invulnerable to obstacles during this time
         Physics2D.IgnoreLayerCollision(7, 8);
         GetComponent<Animator>().SetLayerWeight(1, 1);
         yield return new WaitForSeconds(3);
