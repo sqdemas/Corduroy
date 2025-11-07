@@ -380,8 +380,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.25, y: 0}
-  m_SizeDelta: {x: 695.5, y: 371.5}
+  m_AnchoredPosition: {x: -0.000030518, y: 0}
+  m_SizeDelta: {x: 761, y: 413}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &746069254
 CanvasRenderer:
@@ -455,8 +455,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -45.311333, y: -0.5902}
-  m_SizeDelta: {x: 471.1162, y: 54.7784}
+  m_AnchoredPosition: {x: -37.4396, y: 0.9602}
+  m_SizeDelta: {x: 428.237, y: 70.8581}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1378041886
 CanvasRenderer:
@@ -487,8 +487,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
+    m_Font: {fileID: 12800000, guid: 4beb055f07aaff244873dec698d0363e, type: 3}
+    m_FontSize: 17
     m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 0
@@ -572,8 +572,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 696, y: 404}
+  m_AnchoredPosition: {x: -7.0834, y: 11.8056}
+  m_SizeDelta: {x: 943.1302, y: 531.5004}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1649688632
 GameObject:
@@ -807,7 +807,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 229, y: -149.49773}
+  m_AnchoredPosition: {x: 197, y: -171}
   m_SizeDelta: {x: 76.1072, y: 25.9837}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1702198236
@@ -928,8 +928,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -1, y: -139.7895}
-  m_SizeDelta: {x: -111.7789, y: -295.4733}
+  m_AnchoredPosition: {x: -20.4297, y: -152.23}
+  m_SizeDelta: {x: -222.9969, y: -313.47}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2070205279
 MonoBehaviour:
@@ -944,7 +944,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0.8156863, b: 0.09411765, a: 0.3254902}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.5019608}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
