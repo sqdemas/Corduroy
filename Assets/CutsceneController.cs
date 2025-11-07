@@ -78,6 +78,6 @@ public class CutsceneController : MonoBehaviour
             }
         }
 
-        SceneManager.LoadScene("Level01");
+        SceneManager.LoadScene("Instructions");
     }
 }
