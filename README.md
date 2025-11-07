@@ -14,4 +14,4 @@ This game is meant to be played on PC. Players can click through menu using mous
 |    Name        |      Email       |
 | -------------- | ---------------- |
 | Samantha Demas |   sqd4@pitt.edu  |
-|   Farah Gwynn  |   ftg7@pitt.edu  |
+|   Fahra Gwynn  |   ftg7@pitt.edu  |
