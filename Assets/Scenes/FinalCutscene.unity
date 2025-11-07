@@ -223,17 +223,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b47cfbf49c4254d8e9362d14b5ec698c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  slides:
-  - {fileID: 1302723820812287101, guid: 5b21e7035f8574802a7e9e745e749757, type: 3}
-  - {fileID: 1302723820812287101, guid: 5b21e7035f8574802a7e9e745e749757, type: 3}
-  dialogues:
-  - Corduroy pulls the button too hard and topples off of the mattress, knocking
-    the lamp over with a loud "BANG!"
-  - The security guard hears the sound and rushes over to the furniture store, only
-    to find Corduroy. He returns him to the toy shelf.
   slideImage: {fileID: 746069255}
   dialogueText: {fileID: 1378041887}
   nextButton: {fileID: 1702198236}
+  lines:
+  - image: {fileID: 1302723820812287101, guid: 5b21e7035f8574802a7e9e745e749757, type: 3}
+    dialogue: Corduroy pulls the button too hard and topples off of the mattress,
+      knocking the lamp over with a loud "BANG!"
+  - image: {fileID: 1302723820812287101, guid: 5b21e7035f8574802a7e9e745e749757, type: 3}
+    dialogue: The security guard hears the sound and rushes over to the furniture
+      store, only to find Corduroy. He returns Corduroy to the toy shelf, leaving
+      the button behind.
+  - image: {fileID: 7781202394294830402, guid: 09d1902707d3b421c8f3b36821b2c5ae, type: 3}
+    dialogue: Saddened by his loss of the button, Corduroy falls into a restless
+      sleep.
+  - image: {fileID: -6950486346419376927, guid: 4beaef2802ad949cbbfcae903ce16b90, type: 3}
+    dialogue: The next day...
+  - image: {fileID: -8638421506506822070, guid: 6c5be3f217ad5467e89f178e032912fb, type: 3}
+    dialogue: Corduroy watches as people pass him by, disheartened that he will never
+      be chosen by a child.
+  - image: {fileID: 1269588076273163515, guid: a4b270a4030d94ab7bf23e6e5d6191b2, type: 3}
+    dialogue: 'That is, until he sees a familar face: it''s Lisa, the girl from before!'
+  - image: {fileID: -7469740316118452663, guid: 48ac199fbc30842b28df20a63eca77be, type: 3}
+    dialogue: '"I don''t care that you''re missing a button," Lisa tells him. "I
+      want you just the way you are!"'
+  - image: {fileID: -7469740316118452663, guid: 48ac199fbc30842b28df20a63eca77be, type: 3}
+    dialogue: And so, Lisa buys Corduroy and takes him home, missing button and all!
   fadeImage: {fileID: 1601910600}
   fadeDuration: 2
   nextSceneName: Main Menu
@@ -365,8 +380,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 621, y: 364.5}
+  m_AnchoredPosition: {x: 0.25, y: 0}
+  m_SizeDelta: {x: 695.5, y: 371.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &746069254
 CanvasRenderer:
@@ -440,8 +455,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -40.2724, y: 1.126}
-  m_SizeDelta: {x: 469.6342, y: 46.576}
+  m_AnchoredPosition: {x: -45.311333, y: -0.5902}
+  m_SizeDelta: {x: 471.1162, y: 54.7784}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1378041886
 CanvasRenderer:
@@ -792,8 +807,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 231, y: -148}
-  m_SizeDelta: {x: 75.859, y: 22.9883}
+  m_AnchoredPosition: {x: 229, y: -149.49773}
+  m_SizeDelta: {x: 76.1072, y: 25.9837}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1702198236
 MonoBehaviour:
@@ -838,19 +853,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1702198237}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 618558144}
-        m_TargetAssemblyTypeName: FinalCutsceneController, Assembly-CSharp
-        m_MethodName: OnNextClicked
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1702198237
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -925,8 +928,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -4, y: -139}
-  m_SizeDelta: {x: -51.7748, y: -297.0524}
+  m_AnchoredPosition: {x: -1, y: -139.7895}
+  m_SizeDelta: {x: -111.7789, y: -295.4733}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2070205279
 MonoBehaviour:

@@ -3,82 +3,96 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using System.Collections;
 
+[System.Serializable]
+public class FinalCutsceneLine
+{
+    public Sprite image;
+    [TextArea(2, 5)]
+    public string dialogue;
+}
+
 public class FinalCutsceneController : MonoBehaviour
 {
-    [Header("Slides & Dialogue")]
-    public Sprite[] slides;
-    public string[] dialogues;
+    [Header("UI Elements")]
     public Image slideImage;
     public Text dialogueText;
     public Button nextButton;
-    public Image fadeImage;
+    public FinalCutsceneLine[] lines;
 
     [Header("Fade Settings")]
+    public Image fadeImage;
     public float fadeDuration = 2f;
-    public string nextSceneName;
+    public string nextSceneName = "Main Menu";
 
-    private int currentSlide = 0;
+    private int currentIndex = 0;
     private bool isFading = false;
 
     void Start()
     {
-        // Reset fade to transparent
-        Color c = fadeImage.color;
-        c.a = 0;
-        fadeImage.color = c;
+        // Set up button listener
+        nextButton.onClick.AddListener(NextLine);
 
-        // Ensure the button listener is clean
-        nextButton.onClick.RemoveAllListeners();
-        nextButton.onClick.AddListener(OnNextClicked);
-
-        // Show first slide
-        ShowSlide(currentSlide);
-    }
-
-    void ShowSlide(int index)
-    {
-        slideImage.sprite = slides[index];
-        dialogueText.text = dialogues[index];
-    }
-
-    void OnNextClicked()
-    {
-        if (isFading) return; // Prevent clicks while fading
-
-        if (currentSlide < slides.Length - 1)
+        // Initialize fade as transparent
+        if (fadeImage != null)
         {
-            // Move to next slide
-            currentSlide++;
-            ShowSlide(currentSlide);
+            Color c = fadeImage.color;
+            c.a = 0f;
+            fadeImage.color = c;
+        }
+
+        // Show first line
+        if (lines.Length > 0)
+            ShowLine(currentIndex);
+    }
+
+    void ShowLine(int index)
+    {
+        if (index < lines.Length)
+        {
+            slideImage.sprite = lines[index].image;
+            dialogueText.text = lines[index].dialogue;
+        }
+    }
+
+    public void NextLine()
+    {
+        if (isFading) return; // ignore clicks during fade
+
+        currentIndex++; // advance to next
+
+        if (currentIndex < lines.Length)
+        {
+            ShowLine(currentIndex);
         }
         else
         {
-            // Last slide clicked: start fade coroutine
-            StartCoroutine(FadeOutAndLoad());
+            // End of cutscene reached — start fade
+            nextButton.interactable = false;
+            StartCoroutine(FadeAndLoadNextScene());
         }
     }
 
-    IEnumerator FadeOutAndLoad()
+    IEnumerator FadeAndLoadNextScene()
     {
         isFading = true;
 
-        // Pause 10 seconds before fading
-        yield return new WaitForSeconds(10f);
-
-        float timer = 0f;
-        Color c = fadeImage.color;
-
-        while (timer < fadeDuration)
+        if (fadeImage != null)
         {
-            timer += Time.deltaTime;
-            c.a = Mathf.Lerp(0, 1, timer / fadeDuration);
+            float timer = 0f;
+            Color c = fadeImage.color;
+
+            while (timer < fadeDuration)
+            {
+                timer += Time.deltaTime;
+                c.a = Mathf.Lerp(0f, 1f, timer / fadeDuration);
+                fadeImage.color = c;
+                yield return null;
+            }
+
+            c.a = 1f;
             fadeImage.color = c;
-            yield return null;
         }
 
-        c.a = 1;
-        fadeImage.color = c;
-
-        SceneManager.LoadScene("Main Menu");
+        SceneManager.LoadScene(nextSceneName);
     }
-} 
+}
