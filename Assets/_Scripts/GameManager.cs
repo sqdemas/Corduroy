@@ -85,6 +85,7 @@ public class GameManager : MonoBehaviour
     }
     public void LevelCompleteButton()
     {
+        Time.timeScale = 1f; //
         SceneManager.LoadSceneAsync("Level02");
     }
     

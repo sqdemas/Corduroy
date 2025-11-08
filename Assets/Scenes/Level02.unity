@@ -480,7 +480,7 @@ GameObject:
   - component: {fileID: 1790571664}
   - component: {fileID: 1790571663}
   m_Layer: 5
-  m_Name: Image
+  m_Name: CutsceneText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -790,11 +790,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   PullButton: {fileID: 180731135}
-  InstructionText: {fileID: 0}
+  InstructionImage: {fileID: 1790571663}
+  BackgroundImage: {fileID: 56778148}
   FadeImage: {fileID: 123351145}
   PressesRequired: 3
   FadeDuration: 1
-  FinalCutsceneScene: FinalCutscene
+  NextSceneName: FinalCutscene
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
